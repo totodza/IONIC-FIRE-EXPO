@@ -16,6 +16,7 @@ export class AuthService {
   login(email:string ,password:string){
 
     return new Promise((resolve,rejected)=>{
+      //AFauth para acceder las funciones  de firebase
       this.AFauth.signInWithEmailAndPassword(email,password).then(user=>{
         resolve(user);
         // console.log(res)
@@ -27,6 +28,4 @@ logout(){
     this.router.navigate(['login']);
   })
 }
-
-
 }

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { Observable } from 'rxjs';
+//trae los metodos de firebase para atentificacion
 import { AngularFireAuth} from "@angular/fire/auth";
 import {map } from "rxjs/operators"
 import { isNullOrUndefined } from 'util';
@@ -19,7 +20,7 @@ export class AuthGuard implements CanActivate {
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-
+      
     return this.AFauth.authState.pipe(map(auth=>{
       
 
@@ -30,7 +31,7 @@ export class AuthGuard implements CanActivate {
 
           return true;
         }
-        //console.log(auth);
+       //console.log(auth);
        // return false;
 
       }))

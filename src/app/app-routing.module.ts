@@ -6,8 +6,7 @@ import {NologinGuard} from "./guards/nologin.guard"
 
 
 const routes: Routes = [
-  {
-  path: 'home',loadChildren:  './home/home.module#HomePageModule',canActivate:[AuthGuard]},
+  {path: 'home',loadChildren:  './home/home.module#HomePageModule',canActivate:[AuthGuard]},
   {path: '',redirectTo: 'home',pathMatch: 'full'},
   {path: 'login',loadChildren: './componetes/login/login.module#LoginPageModule',canActivate:[NologinGuard]},
 ];
